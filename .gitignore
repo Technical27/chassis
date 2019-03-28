@@ -1,0 +1,10 @@
+# vscode specific
+.vscode
+# compiled outputs
+**.zip
+bin
+firmware
+# HACK: please find a way to ignore everything but chassis in the include folder
+include/okapi
+include/pros
+include/display
