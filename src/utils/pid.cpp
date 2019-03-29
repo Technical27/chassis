@@ -1,7 +1,7 @@
 #include "chassis/utils/pid.hpp"
 using namespace chassis;
 
-pid::pid (double Kp, double Ki, double Kd, double target = 0) {
+pid::pid (double Kp, double Ki, double Kd, double target) {
   this->Kp = Kp;
   this->Ki = Ki;
   this->Kd = Kd;
