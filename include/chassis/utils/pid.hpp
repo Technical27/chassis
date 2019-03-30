@@ -1,6 +1,7 @@
 #pragma once
 #include <chrono>
 #include <ratio>
+#include <cmath>
 using namespace std::chrono;
 
 
@@ -28,10 +29,20 @@ class pid {
    * sets the target for the pid loop.
   */
   void setTarget(double target);
-  
+
+  /**
+   * sets the min and max for the pid loop.
+  */
+  void setLimits(double min, double max);
+
+  /**
+   * removes limits for the pid loop.
+  */
+  void removeLimits();
+
   private:
-  double Kp, Ki, Kd, integral, error, target;
-  duration<double> dt;
+  double Kp, Ki, Kd, integral, error, target, min, max, output;
+  bool limited;
   steady_clock::time_point pTime;
 };
 }
